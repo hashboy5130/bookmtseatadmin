@@ -23,7 +23,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         void onItemClick(Event event);
     }
 
-    // Constructor with both parameters
+
     public EventsAdapter(List<Event> events, OnItemClickListener listener) {
         this.events = events;
         this.listener = listener;
@@ -48,18 +48,18 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         holder.tvVenue.setText(event.getVenue());
         holder.tvPrice.setText("LKR " + event.getPricePerSeat());
 
-        // Status
+
         String status = event.getStatus();
         int statusColor;
         if ("upcoming".equals(status)) {
             status = "UPCOMING";
-            statusColor = 0xFF4CAF50; // Green
+            statusColor = 0xFF4CAF50;
         } else if ("ongoing".equals(status)) {
             status = "ONGOING";
-            statusColor = 0xFFFF9800; // Orange
+            statusColor = 0xFFFF9800;
         } else {
             status = "COMPLETED";
-            statusColor = 0xFF888888; // Gray
+            statusColor = 0xFF888888;
         }
         holder.tvStatus.setText(status);
         holder.tvStatus.setTextColor(statusColor);

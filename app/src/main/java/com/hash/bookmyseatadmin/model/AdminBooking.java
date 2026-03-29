@@ -25,7 +25,7 @@ public class AdminBooking {
         this.userEmail = userEmail;
     }
 
-    // Getters
+
     public String getBookingId() {
         return bookingId; }
     public String getMovieTitle() {

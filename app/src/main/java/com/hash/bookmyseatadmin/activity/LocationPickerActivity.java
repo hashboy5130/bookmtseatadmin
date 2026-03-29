@@ -43,7 +43,7 @@ public class LocationPickerActivity extends AppCompatActivity implements OnMapRe
     private boolean isMapReady = false;
     private Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    // Sri Lanka bounds
+
     private static final LatLngBounds SRI_LANKA_BOUNDS = new LatLngBounds(
             new LatLng(5.0, 79.0),   // Southwest (Southern point)
             new LatLng(10.0, 82.0)   // Northeast (Northern point)
@@ -200,17 +200,17 @@ public class LocationPickerActivity extends AppCompatActivity implements OnMapRe
         mMap = googleMap;
         isMapReady = true;
 
-        // Configure map UI
+
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(false);
         mMap.getUiSettings().setCompassEnabled(true);
 
-        // Set Sri Lanka bounds to restrict camera movement
+
         mMap.setLatLngBoundsForCameraTarget(SRI_LANKA_BOUNDS);
         mMap.setMinZoomPreference(6.0f);
         mMap.setMaxZoomPreference(15.0f);
 
-        // Set initial location to Colombo
+
         LatLng colombo = new LatLng(6.9271, 79.8612);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombo, 8));
 

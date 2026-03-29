@@ -34,14 +34,14 @@ public class AdminLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
 
-        // Initialize Firebase
+
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Initialize views FIRST
+
         initViews();
 
-        // Check if already logged in (after views initialized)
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             checkIfAdmin(currentUser);
@@ -55,7 +55,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         layoutPassword = findViewById(R.id.layoutPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        // Check if views are null
+
         if (btnBack == null || layoutEmail == null || layoutPassword == null || btnLogin == null) {
             Toast.makeText(this, "Error: Views not found", Toast.LENGTH_LONG).show();
             finish();
@@ -86,7 +86,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (btnLogin == null) return; // Safety check
+                        if (btnLogin == null) return;
 
                         btnLogin.setEnabled(true);
                         btnLogin.setText("Login");
@@ -117,17 +117,17 @@ public class AdminLoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (btnLogin == null) return; // Safety check
+                        if (btnLogin == null) return;
 
                         btnLogin.setEnabled(true);
                         btnLogin.setText("Login");
 
                         if (task.isSuccessful() && !task.getResult().isEmpty()) {
-                            // User is admin
+
                             startActivity(new Intent(AdminLoginActivity.this, AdminDashboardActivity.class));
                             finish();
                         } else {
-                            // Not admin - sign out
+
                             mAuth.signOut();
                             Toast.makeText(AdminLoginActivity.this,
                                     "Unauthorized: Not an admin account",

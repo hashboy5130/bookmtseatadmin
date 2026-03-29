@@ -42,7 +42,7 @@ public class Event {
         this.status = status;
     }
 
-    // Getters and Setters
+
     public String getEventId() { return eventId; }
     public void setEventId(String eventId) { this.eventId = eventId; }
 

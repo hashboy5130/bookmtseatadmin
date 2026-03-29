@@ -114,7 +114,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
             return;
         }
 
-        // Also check Firestore admins collection
+
         db.collection("admins")
                 .whereEqualTo("email", email)
                 .get()
@@ -152,7 +152,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         Log.d(TAG, "Loading stats, isSuperAdmin: " + isSuperAdmin);
 
         if (isSuperAdmin) {
-            // SUPER ADMIN - see ALL bookings
+
             Log.d(TAG, "SUPER ADMIN - Loading ALL bookings");
 
             db.collection("bookings")
@@ -194,7 +194,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
                     });
 
         } else {
-            // REGULAR ADMIN - see only bookings from their events
+
             Log.d(TAG, "REGULAR ADMIN - Loading bookings from their events");
 
             db.collection("events")
@@ -257,7 +257,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         Log.d(TAG, "Loading recent bookings, isSuperAdmin: " + isSuperAdmin);
 
         if (isSuperAdmin) {
-            // SUPER ADMIN - see ALL recent bookings
+
             Log.d(TAG, "SUPER ADMIN - Loading ALL recent bookings");
 
             db.collection("bookings")
@@ -288,7 +288,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
                         }
                     });
         } else {
-            // REGULAR ADMIN - see only bookings from their events
+
             Log.d(TAG, "REGULAR ADMIN - Loading bookings from their events");
 
             db.collection("events")

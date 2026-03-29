@@ -71,7 +71,7 @@ public class MyEventsActivity extends AppCompatActivity {
     }
 
     private void checkAdminRoleAndLoadEvents() {
-        // Check if super admin by email
+
         String email = mAuth.getCurrentUser().getEmail();
 
         List<String> superAdminEmails = new ArrayList<>();
@@ -80,11 +80,11 @@ public class MyEventsActivity extends AppCompatActivity {
 
         if (superAdminEmails.contains(email)) {
             isSuperAdmin = true;
-            loadAllEvents();  // Super Admin sees ALL events
+            loadAllEvents();
             return;
         }
 
-        // Check Firestore for role
+
         db.collection("admins")
                 .whereEqualTo("email", email)
                 .get()
@@ -123,7 +123,7 @@ public class MyEventsActivity extends AppCompatActivity {
     }
 
     private void loadMyEvents() {
-        // Regular Admin - load only their events
+
         db.collection("events")
                 .whereEqualTo("createdBy", currentAdminUid)
                 .get()
