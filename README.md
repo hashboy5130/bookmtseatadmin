@@ -129,6 +129,6 @@ bookmyseatadmin/
 ## 🤝 Contribution & License
 
 Feel free to fork this repository, submit Pull Requests, or file issues for bug fixes and feature enhancements.
-Developed and maintained by **[hashboy5130]([https://github.com/hashboy5130](https://github.com/dev-hashen-liyanaarachchi/))**.
+Developed and maintained by[(https://github.com/dev-hashen-liyanaarachchi/)}.
 
 © 2026 BookMySeat. All rights reserved.
