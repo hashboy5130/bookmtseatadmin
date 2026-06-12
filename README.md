@@ -1,4 +1,4 @@
-# BookMySeat Admin App (BookMySeat පරිපාලක යෙදුම)
+# BookMySeat Admin App
 
 [![Android Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
 [![Firebase Integrated](https://img.shields.io/badge/Backend-Firebase-orange.svg)](https://firebase.google.com)
@@ -6,15 +6,11 @@
 
 An elegant, high-performance Android-based Admin Dashboard application for the **BookMySeat** platform. This app empowers administrators and event coordinators to manage movie screenings, events, track ticket bookings, scan QR codes for attendance, and analyze real-time ticket sales.
 
-**BookMySeat** යනු සිනමා ශාලා සහ විවිධ උත්සව සඳහා ආසන වෙන්කිරීම් කළමනාකරණය කරන පද්ධතියක පරිපාලක (Admin) ජංගම දුරකථන යෙදුමයි. මෙමඟින් නව උත්සව ඇතුළත් කිරීම, ප්‍රවේශ පත්‍ර (Tickets) පරීක්ෂා කිරීම සඳහා QR කේත ස්කෑන් කිරීම, සහ ආදායම් වාර්තා තථ්‍ය කාලීනව (Real-time) නිරීක්ෂණය කළ හැකිය.
-
 ---
 
-## 📸 Screenshots (සංදර්ශන රූප)
+## 📸 Screenshots
 
-Here are the sample user interfaces generated based on the application code layout:
-
-මෙන්න මෙම යෙදුමේ ප්‍රධාන පිටුවල සැලසුම් (Mockups):
+Here are the user interfaces designed based on the application code layout:
 
 <p align="center">
   <img src="screenshots/login_mockup.png" width="30%" alt="Admin Login Mockup" />
@@ -26,49 +22,44 @@ Here are the sample user interfaces generated based on the application code layo
 
 ---
 
-## 🚀 Key Features (ප්‍රධාන අංග)
+## 🚀 Key Features
 
-### 1. **Secure Admin Authentication (ආරක්ෂිත පරිපාලක පිවිසුම)**
+### 1. **Secure Admin Authentication**
 - Email & password authentication handled via **Firebase Auth**.
 - Role-based authorization: Checks if the user exists in the Firestore `admins` collection and verifies their role (`super_admin` vs. regular event coordinator).
-- **Firebase Auth** හරහා සිදුවන ආරක්ෂිත පිවිසුම. Firestore `admins` collection එක මඟින් පරිශීලකයා `super_admin` කෙනෙක්ද නැතහොත් සාමාන්‍ය admin කෙනෙක්ද යන්න තහවුරු කරයි.
 
-### 2. **Real-time Analytics Dashboard (තථ්‍ය කාලීන උපකරණ පුවරුව)**
+### 2. **Real-time Analytics Dashboard**
 - Real-time display of:
-  - **Total Bookings** (මුළු වෙන්කිරීම්)
-  - **Today's Bookings** (අද දින වෙන්කිරීම්)
-  - **Tickets Issued** (නිකුත් කළ ප්‍රවේශ පත්‍ර)
-  - **Attended Attendees** (සහභාගී වූ පුද්ගලයින්)
+  - **Total Bookings**
+  - **Today's Bookings**
+  - **Tickets Issued**
+  - **Attended Attendees**
 - Displays a scrollable list of recent ticket bookings with navigation to detailed views.
-- තථ්‍ය කාලීනව වෙන්කිරීම් සංඛ්‍යාවන් සහ මෑතකදී සිදු වූ වෙන්කිරීම් ලැයිස්තුවක් පෙන්වයි.
 
-### 3. **Event Management (උත්සව කළමනාකරණය)**
+### 3. **Event Management**
 - Create and edit events with:
   - Movie / Event title & Category
   - Date and time picker
   - Ticket price structure
   - Location/Venue details with Google Maps integration
   - Event cover image upload (via image picker)
-- නව උත්සව හෝ සිනමා දර්ශන ඇතුළත් කිරීම සහ සංස්කරණය කිරීම. Google Maps ආධාරයෙන් ස්ථානය තේරීම සහ පින්තූර ඇතුළත් කිරීම මෙහිදී සිදුකළ හැක.
 
-### 4. **QR Code Attendance Verification (QR කේත මඟින් පැමිණීම සලකුණු කිරීම)**
+### 4. **QR Code Attendance Verification**
 - Integrated barcode/QR scanner (using `zxing-android-embedded`) to scan booking QR codes on user tickets.
 - Instantly updates attendance status in Firestore.
-- පරිශීලකයන්ගේ දුරකථනවල ඇති QR කේත ස්කෑන් කර ඔවුන් පැමිණි බව (Attendance) තත්පරයකින් Firestore database එකෙහි යාවත්කාලීන කරයි.
 
-### 5. **Location Picker (ස්ථාන තේරීම)**
+### 5. **Location Picker**
 - Integrates Google Maps SDK and Google Places SDK to allow admin users to search and pinpoint event coordinates.
-- Google Maps SDK ආධාරයෙන් උත්සවය පවත්වන ස්ථානය සිතියම මත ලකුණු කිරීමට හැක.
 
 ---
 
-## 🛠 Tech Stack (තාක්ෂණික මෙවලම්)
+## 🛠 Tech Stack
 
 - **Language:** Java (JDK 11)
 - **Minimum SDK:** Android 28 (Pie)
-- **Target SDK:** Android 36 (16)
+- **Target SDK:** Android 36
 - **Backend Database & Auth:** Firebase Firestore, Firebase Authentication
-- **Libraries used:**
+- **Libraries Used:**
   - Google Play Services (Maps, Location, Places)
   - ZXing Embedded (Barcode/QR scanner)
   - Dhaval2404 Image Picker (Easy profile/cover upload)
@@ -76,18 +67,16 @@ Here are the sample user interfaces generated based on the application code layo
 
 ---
 
-## ⚙️ Setup Instructions (ස්ථාපන උපදෙස්)
+## ⚙️ Setup Instructions
 
 To run this project on your local machine:
 
-මෙම යෙදුම ඔබේ පරිගණකයේ ක්‍රියාත්මක කිරීමට:
-
-### 1. **Clone the Repository (පිටපත් කරගන්න)**
+### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/hashboy5130/BookMySeatAdmin.git
+git clone https://github.com/hashboy5130/bookmtseatadmin.git
 ```
 
-### 2. **Firebase Setup (Firebase සබැඳියාව)**
+### 2. **Firebase Setup**
 1. Go to [Firebase Console](https://console.firebase.google.com/).
 2. Create a new project named `BookMySeat`.
 3. Register your Android app with package name `com.hash.bookmyseatadmin`.
@@ -95,7 +84,7 @@ git clone https://github.com/hashboy5130/BookMySeatAdmin.git
 5. Enable **Email/Password Provider** in Firebase Auth.
 6. Set up **Cloud Firestore** and create an `admins` collection with a sample document structure containing admin emails and their roles.
 
-### 3. **Google Maps API Key Setup (Google Maps යතුර සකසන්න)**
+### 3. **Google Maps API Key Setup**
 Open `app/src/main/AndroidManifest.xml` and replace or check the Google Maps API Key metadata tag:
 ```xml
 <meta-data
@@ -105,15 +94,13 @@ Open `app/src/main/AndroidManifest.xml` and replace or check the Google Maps API
 
 > [!WARNING]
 > **Security Warning:** Never expose your actual Google Maps API Key in a public Git repository. It is highly recommended to secure the key by saving it inside `local.properties` (which is excluded from Git tracking) and loading it via the secrets-gradle-plugin.
-> 
-> **ආරක්ෂක අවවාදයයි:** ඔබගේ Google Maps API Key එක කිසිවිටෙකත් public Git repository එකක ප්‍රසිද්ධ කරන්න එපා. එය `local.properties` ගොනුවේ සුරැකීමට කටයුතු කරන්න.
 
-### 4. **Run Application (ධාවනය කරන්න)**
+### 4. **Run Application**
 Open the project in **Android Studio**, sync Gradle dependencies, connect your Android device or Emulator, and click **Run**.
 
 ---
 
-## 📂 Project Structure (ව්යුහය)
+## 📂 Project Structure
 
 ```text
 bookmyseatadmin/
